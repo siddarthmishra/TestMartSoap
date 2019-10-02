@@ -14,4 +14,6 @@ public interface ProductService {
 
 	List<Product> getProductsv2(String category);
 
+	boolean deleteProduct(String category, String product);
+
 }

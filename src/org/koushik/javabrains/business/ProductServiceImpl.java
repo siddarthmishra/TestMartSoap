@@ -1,6 +1,7 @@
 package org.koushik.javabrains.business;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import org.koushik.javabrains.ProductService;
@@ -26,7 +27,9 @@ public class ProductServiceImpl implements ProductService {
 		movieList.add("Movie 3");
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.koushik.javabrains.business.ProductService#getProductCatalogs()
 	 */
 	@Override
@@ -38,8 +41,11 @@ public class ProductServiceImpl implements ProductService {
 		return catagories;
 	}
 
-	/* (non-Javadoc)
-	 * @see org.koushik.javabrains.business.ProductService#getProducts(java.lang.String)
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * org.koushik.javabrains.business.ProductService#getProducts(java.lang.String)
 	 */
 	@Override
 	public List<String> getProducts(String category) {
@@ -54,8 +60,12 @@ public class ProductServiceImpl implements ProductService {
 		return null;
 	}
 
-	/* (non-Javadoc)
-	 * @see org.koushik.javabrains.business.ProductService#addProduct(java.lang.String, java.lang.String)
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * org.koushik.javabrains.business.ProductService#addProduct(java.lang.String,
+	 * java.lang.String)
 	 */
 	@Override
 	public boolean addProduct(String category, String product) {
@@ -73,8 +83,11 @@ public class ProductServiceImpl implements ProductService {
 		return false;
 	}
 
-	/* (non-Javadoc)
-	 * @see org.koushik.javabrains.business.ProductService#getProductsv2(java.lang.String)
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see org.koushik.javabrains.business.ProductService#getProductsv2(java.lang.
+	 * String)
 	 */
 	@Override
 	public List<Product> getProductsv2(String category) {
@@ -91,6 +104,21 @@ public class ProductServiceImpl implements ProductService {
 		}
 		return productList;
 
+	}
+
+	@Override
+	public boolean deleteProduct(String category, String product) {
+		boolean isSuccess = false;
+		List<String> products = getProducts(category);
+		Iterator<String> iterator = products.iterator();
+		while (iterator.hasNext()) {
+			String l_product = iterator.next();
+			if (l_product.equals(product)) {
+				iterator.remove();
+				isSuccess = true;
+			}
+		}
+		return isSuccess;
 	}
 
 }

@@ -24,4 +24,7 @@ public interface ProductCatalog {
 	@WebResult(name = "Product")
 	List<Product> getProductsv2(String category);
 
+	@WebMethod
+	boolean deleteProduct(String category, String product);
+
 }

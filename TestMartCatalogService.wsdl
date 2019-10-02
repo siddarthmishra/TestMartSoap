@@ -3,8 +3,8 @@
 <import location="http://siddarth:8080/TestMart/TestMartCatalogService?wsdl=1" namespace="http://www.testmart.com"/>
 <binding xmlns:ns1="http://www.testmart.com" name="TestMartCatalogPortBinding" type="ns1:TestMartCatalog">
 <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
-<operation name="fetchCategories">
-<soap:operation soapAction="fetch_categories"/>
+<operation name="deleteProduct">
+<soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
 </input>
@@ -32,6 +32,15 @@
 </operation>
 <operation name="getProductsv2">
 <soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="fetchCategories">
+<soap:operation soapAction="fetch_categories"/>
 <input>
 <soap:body use="literal"/>
 </input>

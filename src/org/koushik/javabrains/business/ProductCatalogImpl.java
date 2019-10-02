@@ -56,4 +56,9 @@ public class ProductCatalogImpl implements ProductCatalog {
 	public List<Product> getProductsv2(String category) {
 		return productService.getProductsv2(category);
 	}
+
+	@Override
+	public boolean deleteProduct(String category, String product) {
+		return productService.deleteProduct(category, product);
+	}
 }
